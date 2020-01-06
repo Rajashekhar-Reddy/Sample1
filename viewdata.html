@@ -1,0 +1,37 @@
+{%load staticfiles%}
+<html>
+<head>
+<link  href="{% static 'images/images.jpg' %}" rel="icon"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+<body>
+<table border="2" class="table">
+<tr>
+	<th>FirstName</th>
+	<th>SecondName</th>
+	<Th>Email</th>
+	<th>UserName</th>
+	<th>Country</th>
+	<th>MobileNumber</th>
+	<Th>Gender</th>
+	<th>DateOfBirth</th>
+	<th>Qualification</th>
+	<Th>Address</th>
+</tr>
+{% for rec in z %}
+ <tr class="success">
+ <td>{{rec.sname}} </td>
+ <td>{{rec.slname}} </td> 
+  <td>{{rec.semail}} </td>
+  <td>{{rec.susername}} </td>
+  <td>{{rec.scountry}}</td>
+  <td>{{rec.snumber}} </td>
+  <td>{{rec.sgender}} </td>
+  <td>{{rec.sdob}} </td>
+  <td>{{rec.squalification}} </td>
+  <td>{{rec.sadress}} </td></tr>
+ {% endfor %}
+ </table>
+ <a href="/home"><h2>Back to Home</h2></a>
+ </body>
+ </html>

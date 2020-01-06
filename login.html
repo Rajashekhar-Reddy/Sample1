@@ -1,0 +1,40 @@
+{% load staticfiles %}
+<html>
+<head>
+<title>Sign In</title>
+<link  href="{% static 'images/images.jpg' %}" rel="icon"/>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<style>
+form
+{
+ width:300px;
+ margin-left:360;
+}
+
+</style>
+</head>
+<body><br>
+<div class="container" >
+<div class="row">
+<div class="col-md-4" >
+<form action="/login/" method="post" class="form-group"  >
+{% csrf_token %}
+<label>Enter Your Username:</label>
+<input class="form-control" type="text" name="s1" required  /><br>
+<label>Enter Your Password:</label>
+<input class="form-control" type="password" name="s2" required /><br>
+<input type="submit" value="Login" class="btn btn-primary"/><br><br>
+</form>
+</div>
+</div>
+</div>
+<p style="font-size:30px;text-align:center;"> New To Find Job Portal <a href="/signup"> SignUp</a></P>
+<h1 style="text-align:center;"><a class="btn btn-success" href="/home">BackToHome</a></h1>
+<div>
+{% for message in messages %}
+	<h1 style="background-color:lightgreen;color:red">{{ message }}</h1> 
+{% endfor %}
+</div>
+</body>
+</html>
